@@ -6,36 +6,14 @@ main .container {
 
 .main-intro {
   position: relative;
-  /* background: var(--darkblue-transparent) url(/images/slider1.jpg) no-repeat center; */
-  background-image: url(/images/slider1.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
+  background: linear-gradient(var(--darkblue-transparent),var(--darkblue-transparent)), url(/images/slider1.jpg), no-repeat, center ;
   background-size: cover;
   max-width: 100%;
-  z-index: 0;
-}
-
-.main-intro::before {
-  position: absolute;
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: var(--darkblue-transparent);
-  width: 100%;
-  height: 100%;
-  opacity: 90%;
-  z-index: -1000;
-}
-
-.main-intro h1,
-.main-intro p {
-  z-index: 1000;
 }
 
 .main-intro h1 {
   padding: 30px 0;
   color: var(--white);
-  z-index: 2000;
 }
 
 .main-intro p {
@@ -56,6 +34,7 @@ main .container {
   padding: 10px 20px;
   text-transform: capitalize;
   border-radius: 2px;
+  border: 1px solid var(--orange);
 }
 
 .buttons--white {
@@ -75,18 +54,12 @@ main .container {
 
 /* MAIN-SERVICES */
 
-.main-services {
+.main-services .container {
   display: grid;
   padding: 50px 0;
 }
 
-.main-services div:nth-child(n+2) {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.103);
-  margin-top: 30px;
-  padding: 30px 20px;
-}
-
-.main-services div h2 {
+.main-services .container div h2 {
   font-size: 20px;
   line-height: 32px;
   color: var(--gray);
@@ -94,13 +67,35 @@ main .container {
   max-width: 250px;
 }
 
-.main-services div i {
+.main-services .container > div:first-child p {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.main-services .container > div:first-child p::after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background-color: var(--orange);
+}
+
+
+.main-services .container div:nth-child(n+2) {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.171);
+  margin-top: 30px;
+  padding: 30px 20px;
+}
+
+.main-services .container div i {
   color: var(--orange);
   font-size: 50px;
   padding-bottom: 20px;
 }
 
-.main-services div h3 {
+.main-services .container div h3 {
   font-size: 22px;
   color: var(--gray);
   text-transform: capitalize;
@@ -109,7 +104,7 @@ main .container {
   max-width: 150px;
 }
 
-.main-services div p {
+.main-services .container div p {
   font-size: 15px;
   letter-spacing: 0.6px;
   line-height: 28px;
@@ -130,7 +125,7 @@ main .container {
 /* --------------------- TABLET ---------------------*/
 
 @media screen and (min-width: 768px) {
-sda
+
 main .container {
   width: 720px;
 }
@@ -154,6 +149,27 @@ main .container {
   column-gap: 20px;
 }
 
+/* MAIN-SERVICES */
+
+.main-services .container {
+  grid-template-columns: repeat (3, 1fr);
+  gap: 30px; 
+}
+
+.main-services .container div:first-child {
+  grid-column: 1/span 3;
+}
+
+.main-services .container div:first-child h2 {
+  font-size: 30px;
+  line-height: 42px;
+  max-width: 900px;
+}
+
+.main-services .container div:first-child p {
+  max-width: 700px;
+}
+
 }
 
 /* --------------------- LAPTOP ---------------------*/
@@ -173,6 +189,7 @@ main .container {
   max-width: 900px;
   letter-spacing: 1px;
   line-height: 56px;
+  font-weight: 700;
 }
 
 .main-intro p {
@@ -183,14 +200,28 @@ main .container {
   padding-bottom: 60px;
 }
 
+/* MAIN-SERVICES */
+
+.main-services .container {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-services .container div:nth-child(n+2) {
+  margin-top: 0;
+}
+
+.main-services .container div:first-child {
+  grid-column: 1/span 2;
+}
+
 }
 
 /* --------------------- DESKTOP ---------------------*/
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1366px) {
 
 main .container {
-  width: 1300px;
+  width: 1250px;
 }
 
 /* MAIN-INTRODUCTION */
@@ -215,6 +246,10 @@ main .container {
 .buttons {
   padding: 14px 20px;
 }
-
 }
 
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1390px;
+  }
+}
