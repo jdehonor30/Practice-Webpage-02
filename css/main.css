@@ -1,0 +1,255 @@
+main .container {
+  width: 290px;
+}
+
+/* MAIN-INTRODUCTION */
+
+.main-intro {
+  position: relative;
+  background: linear-gradient(var(--darkblue-transparent),var(--darkblue-transparent)), url(/images/slider1.jpg), no-repeat, center ;
+  background-size: cover;
+  max-width: 100%;
+}
+
+.main-intro h1 {
+  padding: 30px 0;
+  color: var(--white);
+}
+
+.main-intro p {
+  color: var(--dirtywhite);
+  line-height: 24px;
+}
+
+.main-intro__buttons {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.buttons {
+  color: var(--white);
+  background-color: var(--orange);
+  padding: 10px 20px;
+  text-transform: capitalize;
+  border-radius: 2px;
+  border: 1px solid var(--orange);
+}
+
+.buttons--white {
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.buttons:hover {
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.buttons--white:hover {
+  background-color: var(--orange);
+  border: 1px solid transparent;
+}
+
+/* MAIN-SERVICES */
+
+.main-services .container {
+  display: grid;
+  padding: 50px 0;
+}
+
+.main-services .container div h2 {
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--gray);
+  margin-bottom: 15px;
+  max-width: 250px;
+}
+
+.main-services .container > div:first-child p {
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.main-services .container > div:first-child p::after {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  width: 25%;
+  height: 2px;
+  background-color: var(--orange);
+}
+
+
+.main-services .container div:nth-child(n+2) {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.171);
+  margin-top: 30px;
+  padding: 30px 20px;
+}
+
+.main-services .container div i {
+  color: var(--orange);
+  font-size: 50px;
+  padding-bottom: 20px;
+}
+
+.main-services .container div h3 {
+  font-size: 22px;
+  color: var(--gray);
+  text-transform: capitalize;
+  line-height: 30px;
+  padding-bottom: 20px;
+  max-width: 150px;
+}
+
+.main-services .container div p {
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  line-height: 28px;
+  color: var(--lightgray);
+  max-width: 250px;
+}
+
+.main-services .container div:nth-child(n+2):hover {
+  background-color: var(--darkblue);
+}
+
+.main-services .container div:nth-child(n+2):hover i,
+.main-services .container div:nth-child(n+2):hover h3,
+.main-services .container div:nth-child(n+2):hover p {
+  color: var(--white);
+}
+
+/* --------------------- TABLET ---------------------*/
+
+@media screen and (min-width: 768px) {
+
+main .container {
+  width: 720px;
+}
+
+/* MAIN-INTRODUCTION */
+
+.main-intro h1 {
+  font-size: 34px;
+  max-width: 450px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+.main-intro p {
+  letter-spacing: 0.6px;
+  max-width: 570px;
+}
+
+.main-intro__buttons {
+  justify-content: flex-start;
+  column-gap: 20px;
+}
+
+/* MAIN-SERVICES */
+
+.main-services .container {
+  grid-template-columns: repeat (3, 1fr);
+  gap: 30px; 
+}
+
+.main-services .container div:first-child {
+  grid-column: 1/span 3;
+}
+
+.main-services .container div:first-child h2 {
+  font-size: 30px;
+  line-height: 42px;
+  max-width: 900px;
+}
+
+.main-services .container div:first-child p {
+  max-width: 700px;
+}
+
+}
+
+/* --------------------- LAPTOP ---------------------*/
+
+@media screen and (min-width: 1024px) {
+
+main .container {
+  width: 950px;
+}
+
+/* MAIN-INTRODUCTION */
+
+.main-intro h1 {
+  padding-top: 60px;
+  font-size: 50px;
+  font-weight: 700;
+  max-width: 900px;
+  letter-spacing: 1px;
+  line-height: 56px;
+  font-weight: 700;
+}
+
+.main-intro p {
+  font-size: 18px;
+}
+
+.main-intro__buttons {
+  padding-bottom: 60px;
+}
+
+/* MAIN-SERVICES */
+
+.main-services .container {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-services .container div:nth-child(n+2) {
+  margin-top: 0;
+}
+
+.main-services .container div:first-child {
+  grid-column: 1/span 2;
+}
+
+}
+
+/* --------------------- DESKTOP ---------------------*/
+
+@media screen and (min-width: 1366px) {
+
+main .container {
+  width: 1250px;
+}
+
+/* MAIN-INTRODUCTION */
+
+.main-intro h1 {
+  padding-top: 100px;
+  font-size: 60px;
+  line-height: 70px;
+}
+
+.main-intro p {
+  line-height: 30px;
+  max-width: 750px;
+  font-weight: 500px;
+}
+
+.main-intro__buttons {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.buttons {
+  padding: 14px 20px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1390px;
+  }
+}
